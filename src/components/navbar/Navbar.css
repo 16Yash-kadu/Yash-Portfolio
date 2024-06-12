@@ -65,4 +65,7 @@
   .header {
     width: 100%;
   }
+  #YashHeading {
+    margin-top: 16px;
+  }
 }

@@ -26,7 +26,10 @@ const Navbar = () => {
 
   return (
     <div className={color ? "header header-bg" : "header"}>
-      <h1 className="mx-4"> Yash Kadu</h1>
+      <h1 className="mx-4" id="YashHeading">
+        {" "}
+        Yash Kadu
+      </h1>
 
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         {header.map((item) => (
@@ -37,8 +40,13 @@ const Navbar = () => {
       </ul>
 
       <div className="icon">
-        <img src={img1} alt="linkedIN icon" />
-        <img src={img2} alt="GitHub icon" className="px-4" />
+        <img src={img1} alt="linkedIN icon" style={{ height: "27px" }} />
+        <img
+          src={img2}
+          alt="GitHub icon"
+          className="px-4"
+          style={{ height: "27px" }}
+        />
       </div>
       <div className="hamburger" onClick={handleClick}>
         {click ? (
