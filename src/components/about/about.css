@@ -1,0 +1,116 @@
+.aboutContainer {
+  margin-top: 150px;
+}
+.card-wrapper {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left,
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#onePlus {
+  background: linear-gradient(to right, #4e65ff, #92effd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.relative {
+  position: relative;
+}
+
+.design {
+  display: flex;
+  position: absolute;
+  left: -150px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  align-items: center;
+}
+
+.c1,
+.c2 {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border: 2px solid #4e65ff;
+  border-radius: 50%;
+}
+
+.line {
+  width: 230px;
+  height: 2px;
+  background-color: #d1d5db;
+}
+
+.content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 2px solid;
+  border-image: linear-gradient(to right, #4e65ff, #92effd) 1;
+
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.company,
+.duration {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.company {
+  color: #6b7280;
+}
+
+.duration {
+  background: linear-gradient(to right, #4e65ff, #92effd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  font-size: 0.9rem;
+  text-align: justify;
+  color: #6b7280;
+  word-break: break-words;
+}
+
+@media (max-width: 640px) {
+  .aboutContainer {
+    margin-top: 80px;
+  }
+  .card-wrapper {
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .design {
+    left: -160px;
+  }
+
+  .line {
+    width: 250px;
+  }
+}

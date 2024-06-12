@@ -1,0 +1,17 @@
+.skillContainer {
+  margin-top: 180px;
+}
+.skillComponent {
+  background-color: white;
+  padding: 10px;
+  height: 180px;
+  width: 180px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #92effd, -5px -5px 10px #4e65ff;
+}
+
+@media screen and (max-width: 640px) {
+  .skillContainer {
+    margin-top: 80px;
+  }
+}
