@@ -2,7 +2,7 @@ import "./about.css";
 
 const About = () => {
   return (
-    <div className="aboutContainer ">
+    <div id="about" className="aboutContainer ">
       <h1 className="fw-bold text-center">About Me </h1>
 
       <div className="container">
@@ -100,7 +100,7 @@ const About = () => {
                   <div className="content-box">
                     <h1 className="title">B.Sc Computer Science</h1>
                     <span className="company">Gvish Amravati</span>
-                    <span className="duration">Year 2019 - Year 2023</span>
+                    <span className="duration">Year 2019 - Year 2022</span>
                     <p className="description">
                       As an graduate Student in B.Sc Computer Science provided
                       me with a good understanding in development technologies,

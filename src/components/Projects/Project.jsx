@@ -4,7 +4,7 @@ import img2 from "../../assets/Group.png";
 
 const Project = () => {
   return (
-    <div className="projectContainer mb-4">
+    <div id="project" className="projectContainer mb-4">
       <h1 className="text-center fw-bold">Projects</h1>
       <h4 className="text-center" style={{ color: "#A7A7A7" }}>
         Things I’ve built so far
@@ -12,7 +12,7 @@ const Project = () => {
 
       <div className="container ">
         <div className="row mt-5">
-          <div className="col-lg-4">
+          <div className="col-lg-4 mb-3">
             {" "}
             <img src={img1} id="projectImage" />
             <div id="projectBox" className="py-3">
@@ -35,7 +35,7 @@ const Project = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 mb-3">
             {" "}
             <img src={img1} id="projectImage" />
             <div id="projectBox" className="py-3">
@@ -58,7 +58,7 @@ const Project = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 mb-3">
             {" "}
             <img src={img1} id="projectImage" />
             <div id="projectBox" className="py-3">

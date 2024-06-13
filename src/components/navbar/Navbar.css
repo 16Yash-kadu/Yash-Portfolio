@@ -23,13 +23,19 @@
 }
 .nav-menu li {
   padding: 0 1rem;
+  cursor: pointer;
 }
-.nav-menu li a {
+
+.nav-menu li {
   font-size: 1.5rem;
   font-weight: 500;
 }
+
 .hamburger {
   display: none;
+}
+.underlineHeader {
+  border-bottom: 2px solid #4e65ff;
 }
 
 @media screen and (max-width: 1040px) {
