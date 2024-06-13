@@ -1,6 +1,7 @@
 import "./hero.css";
 // import yashimg from "../../assets/yash.jpg";
 import Tech from "../../assets/TechImg.png";
+import { saveAs } from "file-saver";
 
 const Hero = () => {
   // const handleDownload = () => {
@@ -18,15 +19,14 @@ const Hero = () => {
     const resumePath = `${window.location.origin}/Yash Kadu (fe).pdf`; // Absolute URL to the resume file
 
     fetch(resumePath)
-      .then((response) => response.blob())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.blob();
+      })
       .then((blob) => {
-        const url = window.URL.createObjectURL(new Blob([blob]));
-        const link = document.createElement("a");
-        link.href = url;
-        link.setAttribute("download", "YashKadu_Resume.pdf"); // Desired file name
-        document.body.appendChild(link);
-        link.click();
-        link.parentNode.removeChild(link);
+        saveAs(blob, "YashKadu_Resume.pdf"); // Desired file name
       })
       .catch((error) => console.error("Error downloading the resume:", error));
   };
@@ -41,7 +41,7 @@ const Hero = () => {
                 Hello, I'm Yash Kadu
               </h1>
               <h2 className="mt-3 mb-3 " id="AnimatedHeading">
-                Front End Developer{" "}
+                Front End Developer hello{" "}
               </h2>
               <p className=" mt-2 mb-4 fs-5" id="heroParagraph">
                 I focus on developing user-friendly web applications that meet
