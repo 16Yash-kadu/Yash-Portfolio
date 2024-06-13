@@ -1,34 +1,17 @@
 import "./hero.css";
 // import yashimg from "../../assets/yash.jpg";
 import Tech from "../../assets/TechImg.png";
-import { saveAs } from "file-saver";
 
 const Hero = () => {
-  // const handleDownload = () => {
-  //   // Replace 'path_to_your_resume.pdf' with the actual path to your resume
-  //   const resumePath = "../../assets/Yash Kadu (fe).pdf";
-  //   const link = document.createElement("a");
-  //   link.href = resumePath;
-  //   link.download = "YashKadu_Resume.pdf"; // Change 'YourName_Resume.pdf' to your desired file name
-  //   document.body.appendChild(link);
-  //   link.click();
-  //   document.body.removeChild(link);
-  // };
-
   const handleDownload = () => {
-    const resumePath = `${window.location.origin}/Yash Kadu (fe).pdf`; // Absolute URL to the resume file
-
-    fetch(resumePath)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.blob();
-      })
-      .then((blob) => {
-        saveAs(blob, "YashKadu_Resume.pdf"); // Desired file name
-      })
-      .catch((error) => console.error("Error downloading the resume:", error));
+    // Replace 'path_to_your_resume.pdf' with the actual path to your resume
+    const resumePath = "../../assets/Yash Kadu (fe).pdf";
+    const link = document.createElement("a");
+    link.href = resumePath;
+    link.download = "YashKadu_Resume.pdf"; // Change 'YourName_Resume.pdf' to your desired file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -41,7 +24,7 @@ const Hero = () => {
                 Hello, I'm Yash Kadu
               </h1>
               <h2 className="mt-3 mb-3 " id="AnimatedHeading">
-                Front End Developer hello{" "}
+                Front End Developer
               </h2>
               <p className=" mt-2 mb-4 fs-5" id="heroParagraph">
                 I focus on developing user-friendly web applications that meet
