@@ -1,18 +1,36 @@
 import "./hero.css";
-import yashimg from "../../assets/yash.jpg";
+// import yashimg from "../../assets/yash.jpg";
 import Tech from "../../assets/TechImg.png";
 
 const Hero = () => {
+  // const handleDownload = () => {
+  //   // Replace 'path_to_your_resume.pdf' with the actual path to your resume
+  //   const resumePath = "../../assets/Yash Kadu (fe).pdf";
+  //   const link = document.createElement("a");
+  //   link.href = resumePath;
+  //   link.download = "YashKadu_Resume.pdf"; // Change 'YourName_Resume.pdf' to your desired file name
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
+
   const handleDownload = () => {
-    // Replace 'path_to_your_resume.pdf' with the actual path to your resume
-    const resumePath = "../../assets/Yash Kadu (fe).pdf";
-    const link = document.createElement("a");
-    link.href = resumePath;
-    link.download = "YashKadu_Resume.pdf"; // Change 'YourName_Resume.pdf' to your desired file name
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const resumePath = `${window.location.origin}/Yash Kadu (fe).pdf`; // Absolute URL to the resume file
+
+    fetch(resumePath)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", "YashKadu_Resume.pdf"); // Desired file name
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      })
+      .catch((error) => console.error("Error downloading the resume:", error));
   };
+
   return (
     <div className="hero">
       <div className="container ">

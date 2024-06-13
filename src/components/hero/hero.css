@@ -14,8 +14,9 @@
 }
 
 .rigthImage {
-  height: 350px;
+  height: 420px;
   width: 500px;
+  margin-top: -30px;
 }
 
 @media screen and (max-width: 640px) {

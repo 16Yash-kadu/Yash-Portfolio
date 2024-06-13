@@ -7,7 +7,7 @@ const Footer = () => {
   const phoneNumber = "9022331539";
 
   // Replace 'Hello!' with your pre-filled message (optional)
-  const message = "Hello!";
+  const message = " Hi, Yash";
 
   const handleWhatsApp = () => {
     window.open(
