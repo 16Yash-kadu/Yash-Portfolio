@@ -1,14 +1,16 @@
 import "./hero.css";
-// import yashimg from "../../assets/yash.jpg";
 import Tech from "../../assets/TechImg.png";
+import Headline from "./Headline";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const handleDownload = () => {
     // Replace 'path_to_your_resume.pdf' with the actual path to your resume
-    const resumePath = "../../assets/Yash Kadu (fe).pdf";
+    const resumePath = "../../assets/Yash_Kadu_Front End Developer.pdf";
+
     const link = document.createElement("a");
     link.href = resumePath;
-    link.download = "YashKadu_Resume.pdf"; // Change 'YourName_Resume.pdf' to your desired file name
+    link.download = "Yash_Kadu_Front End Developer.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -24,7 +26,7 @@ const Hero = () => {
                 Hello, I'm Yash Kadu
               </h1>
               <h2 className="mt-3 mb-3 " id="AnimatedHeading">
-                Front End Developer
+                <Headline />
               </h2>
               <p className=" mt-2 mb-4 fs-5" id="heroParagraph">
                 I focus on developing user-friendly web applications that meet
@@ -48,7 +50,18 @@ const Hero = () => {
             </div>
           </div>
           <div className="col-lg-5 col-sm-6 ">
-            <img src={Tech} className="rigthImage" />
+            <motion.img
+              src={Tech}
+              alt="Placeholder"
+              className="rigthImage"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
+            />
           </div>
         </div>
       </div>

@@ -45,8 +45,10 @@ const About = () => {
                   </div>
                   <div className="content-box">
                     <h1 className="title">Front End Developer</h1>
-                    <span className="company">#--------------</span>
-                    <span className="duration">1 + Experience</span>
+                    <span className="company">
+                      Praman Proserv Technologies Pvt Ltd
+                    </span>
+                    <span className="duration">Oct 2023 - July 2024</span>
                     <p className="description">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Consequuntur repudiandae, animi eaque sapiente consequatur
@@ -78,9 +80,8 @@ const About = () => {
                       I have completed an intensive Java Developer Course,
                       mastering a comprehensive skill set that spans both
                       front-end and back-end technologies. Good in core Java and
-                      Spring Boot and hibernate, I also excel in JavaScript for
-                      dynamic web applications and SQL for efficient database
-                      management.
+                      , I also excel in JavaScript for dynamic web applications
+                      and SQL for efficient database management.
                     </p>
                   </div>
                 </div>

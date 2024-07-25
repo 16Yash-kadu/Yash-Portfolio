@@ -3,13 +3,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  width: 94%;
+  width: 100%;
   margin: auto;
   height: 90px;
   z-index: 10;
+  position: fixed;
+  top: 0;
 }
 .header-bg {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: black;
   transition: 0.5s;
 }
 .header h1 {
@@ -70,6 +72,7 @@
   }
   .header {
     width: 100%;
+    position: static;
   }
   #YashHeading {
     margin-top: 16px;

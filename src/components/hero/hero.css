@@ -1,7 +1,7 @@
 .hero {
   height: 100%;
   width: 100%;
-  margin-top: 150px;
+  margin-top: 250px;
 }
 #heroTitle {
   font-size: 48px;
@@ -43,4 +43,19 @@
   #heroParagraph {
     width: 100%;
   }
+}
+
+/* This Css Is related to Animated Headline */
+
+.heading-container {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.word {
+  display: inline-block;
+  margin: 0 5px;
+}
+.containerHead {
+  margin-left: -6px;
 }

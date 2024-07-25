@@ -1,7 +1,13 @@
+import { useState } from "react";
 import "./contact.css";
-import img1 from "../../assets/Group.png";
+import { IoMail } from "react-icons/io5";
+import { IoCallOutline } from "react-icons/io5";
+import { FaAddressCard } from "react-icons/fa";
 
 const Contact = () => {
+  const [emailError, setEmailError] = useState("");
+  const [phone, setPhone] = useState("");
+
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -25,9 +31,35 @@ const Contact = () => {
     }
     alert("Form Submitted Successfully");
   };
+
+  const validateEmail = (email) => {
+    if (!email.includes("@") || !email.endsWith("gmail.com")) {
+      setEmailError("Email must contain '@' and end with 'gmail.com'");
+      return false;
+    } else {
+      setEmailError("");
+      return true;
+    }
+  };
+
+  const handlePhoneChange = (e) => {
+    const input = e.target.value.replace(/\D/g, ""); // Remove non-digits
+    if (input.length <= 10) {
+      setPhone(input);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    if (validateEmail(email)) {
+      onSubmit(e);
+    }
+  };
+
   return (
     <div id="contact" className="contactContainer">
-      <h1 className="fw-bold text-center mt-5 mb-5"> Contact us</h1>
+      <h1 className="fw-bold text-center mt-5 mb-5">Contact us</h1>
 
       <div className="container">
         <div className="row">
@@ -37,22 +69,35 @@ const Contact = () => {
 
             <div className="email mt-4 mb-3">
               <div className="d-flex align-center">
-                <img src={img1} className="h-25 mt-1 px-2" alt="Contact" />
-                <h5 style={{ color: "#A7A7A7" }}>Talk to us : </h5>
+                <div className="px-2">
+                  <IoMail />
+                </div>
+
+                <h5 className="px-2" style={{ color: "#A7A7A7" }}>
+                  Talk to us :
+                </h5>
               </div>
               <h5 className="px-4">yashkadu165@gmil.com</h5>
             </div>
             <div className="email mt-2 mb-3">
               <div className="d-flex align-center">
-                <img src={img1} className="h-25 mt-1 px-2" alt="Call" />
-                <h5 style={{ color: "#A7A7A7" }}>Call us : </h5>
+                <div className="px-2">
+                  <IoCallOutline />
+                </div>{" "}
+                <h5 className="px-2" style={{ color: "#A7A7A7" }}>
+                  Call us :
+                </h5>
               </div>
               <h5 className="px-4">+91 9022331539</h5>
             </div>
             <div className="email">
               <div className="d-flex align-center">
-                <img src={img1} className="h-25 mt-1 px-2" alt="Address" />
-                <h5 style={{ color: "#A7A7A7" }}>Address us : </h5>
+                <div className="px-2">
+                  <FaAddressCard />
+                </div>{" "}
+                <h5 className="px-2" style={{ color: "#A7A7A7" }}>
+                  Address us :
+                </h5>
               </div>
               <h5 className="px-4">
                 Yashoda nagar, Khule Layout, Kandli, Paratwada, Amravati.
@@ -60,7 +105,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="col-lg-7">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmit}>
               <div className="container">
                 <div className="row">
                   <div className="col-lg-6 mt-2 mb-2">
@@ -95,17 +140,22 @@ const Contact = () => {
                       id="inputField"
                       required
                     />
+                    {emailError && <p style={{ color: "red" }}>{emailError}</p>}
                   </div>
                   <div className="col-lg-6 mt-2 mb-2">
                     <label className="mb-2">Phone :</label>
-                    <input
-                      type="text"
-                      name="phone"
-                      placeholder="Phone"
-                      className="form-control w-100"
-                      id="inputField"
-                      required
-                    />
+                    <div className="input-group">
+                      <input
+                        type="text"
+                        name="phone"
+                        placeholder="Phone"
+                        className="form-control w-100"
+                        id="inputField"
+                        value={phone}
+                        onChange={handlePhoneChange}
+                        required
+                      />
+                    </div>
                   </div>
                   <div className="col-lg-12 mt-2 mb-2">
                     <div className="form-group">
@@ -121,7 +171,6 @@ const Contact = () => {
                         id="exampleFormControlTextarea1"
                         rows="4"
                         placeholder="Message"
-                        required
                       ></textarea>
                     </div>
                   </div>
@@ -130,7 +179,6 @@ const Contact = () => {
                     style={{ margin: "auto" }}
                   >
                     <button type="submit" className="btn">
-                      {" "}
                       Send
                     </button>
                   </div>

@@ -1,0 +1,22 @@
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Optional: semi-transparent background */
+  z-index: 9999;
+}
+
+.custom-loader .sync-loader {
+  display: block;
+  border-color: #4e65ff !important; /* Apply solid color */
+}
